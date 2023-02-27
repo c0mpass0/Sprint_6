@@ -8,29 +8,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
-
 @RunWith(MockitoJUnitRunner.class)
-public class LionTest {
+public class LionGenericTest {
 
     @Mock
     Feline feline;
-
-    @Test
-    public void lionDoesHasManeReturnTrueIfMale() throws Exception {
-        Lion lion = new Lion("Самец", feline);
-        boolean expectedHasMane = true;
-
-        assertEquals("Наличие гривы не совпало" ,expectedHasMane, lion.doesHaveMane());
-    }
-
-    @Test
-    public void lionDoesHasManeReturnFalseIfFemale() throws Exception {
-        Lion lion = new Lion("Самка", feline);
-        boolean expectedHasMane = false;
-
-        assertEquals("Наличие гривы не совпало" ,expectedHasMane, lion.doesHaveMane());
-    }
 
     @Test(expected = Exception.class)
     public void lionDoesHasManeReturnException()  throws Exception {
