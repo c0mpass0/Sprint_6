@@ -27,7 +27,7 @@ public class AnimalGenericTest {
     }
 
     @Test(expected = Exception.class)
-    public void animalGetFoodReturnException()  throws Exception {
+    public void animalGetFoodReturnException() throws Exception {
         Animal animal = new Animal();
         animal.getFood("");
     }

@@ -15,7 +15,7 @@ public class LionGenericTest {
     Feline feline;
 
     @Test(expected = Exception.class)
-    public void lionDoesHasManeReturnException()  throws Exception {
+    public void lionDoesHasManeReturnException() throws Exception {
         Lion lion = new Lion("Сам", feline);
     }
 

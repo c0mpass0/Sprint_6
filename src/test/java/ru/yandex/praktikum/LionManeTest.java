@@ -13,27 +13,26 @@ import static org.junit.Assert.assertEquals;
 public class LionManeTest {
     private final String lionSex;
     private final boolean lionMane;
+    @Mock
+    Feline feline;
 
-    public LionManeTest(String lionSex, boolean lionMane){
+    public LionManeTest(String lionSex, boolean lionMane) {
         this.lionSex = lionSex;
         this.lionMane = lionMane;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Пол льва и ожидаемый ответ наличия гривы. Тестовые данные: {0} {1}")
     public static Object[][] getSumData() {
-        return new Object[][] {
+        return new Object[][]{
                 {"Самец", true},
-                { "Самка", false},
+                {"Самка", false},
         };
     }
-
-    @Mock
-    Feline feline;
 
     @Test
     public void lionDoesHasManeReturnManeState() throws Exception {
         Lion lion = new Lion(lionSex, feline);
 
-        assertEquals("Наличие гривы не совпало" ,lionMane, lion.doesHaveMane());
+        assertEquals("Наличие гривы не совпало", lionMane, lion.doesHaveMane());
     }
 }
